@@ -75,12 +75,12 @@ export default class Calculator extends Component{
 
 
     changeSecondInput(e){
-        const v = e.target.value;
-        const k = Math.floor((v*this.state.reverskurs) * 100) / 100; 
-        this.setState({
-            valueFirstInput : k,
-            valueSecondInput : v
-        })
+        // const v = e.target.value;
+        // const k = Math.floor((v*this.state.reverskurs) * 100) / 100; 
+        // this.setState({
+        //     valueFirstInput : k,
+        //     valueSecondInput : v
+        // })
     }
 
     componentDidMount(){
@@ -88,7 +88,7 @@ export default class Calculator extends Component{
     }
 
     render(){
-        console.log(this.state)
+        //console.log(this.state)
         let title = "";
         switch(this.props.language){
             case "rus":
@@ -124,7 +124,7 @@ export default class Calculator extends Component{
                                     <option value={e.value} key={index}>{e.title} </option>    
                                 )}
                             </select>
-                            <input className="ml-1 form-control" placeholder="0" type="number" value={this.state.valueSecondInput} />
+                            <input className="ml-1 form-control" placeholder="0" type="number" value={this.state.valueSecondInput} onChange={e => this.changeSecondInput(e)}/>
                         </div>
                     </div>
                 </div>

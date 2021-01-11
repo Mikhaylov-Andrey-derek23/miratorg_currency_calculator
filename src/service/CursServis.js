@@ -12,10 +12,10 @@ export default class CursServis {
 
     getCurs = async (firstCurrency, secondCurrency) =>{
         const url = `base=${firstCurrency}&symbols=${secondCurrency}`;
-        console.log(url);
+        //console.log(url);
         let res = await this.getResource(url);
         res = res.rates[secondCurrency]
-        console.log(res)
+        //console.log(res)
         return res
     }
  
